@@ -11,22 +11,21 @@ import kotlin.jvm.JvmField
 class CalendarDate {
     @JvmField
     var date: LocalDate = LocalDate.now()
-    //var mental: Mental = Mental()
+    var mental: Mental = Mental()
     //TODO private set or something
     var items: MutableList<Item> = ArrayList()
 
     val day: Int
-        get() = date.dayOfMonth
+        get() = date.day
 
     fun hasEvents(): Boolean {
         return items.isNotEmpty()
     }
 
-/*    fun setItems(items: MutableList<Item>) {
+   fun setItems(items: MutableList<Item>) {
         this.items = items
-    }*/
+    }
 
-    constructor()
     constructor(date: LocalDate) {
         this.date = date
     }
